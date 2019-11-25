@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import {UserService} from '../services/user.service';
+import {ActivatedRoute, Router} from '@angular/router';
+import {User} from '../models/user.model';
+import {faEnvelope} from '@fortawesome/free-solid-svg-icons';
+import {UserApiResponse} from '../models/user-api-response.interface';
 
 @Component({
   selector: 'app-user-detail',
@@ -6,10 +11,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-detail.component.scss']
 })
 export class UserDetailComponent implements OnInit {
-
-  constructor() { }
+  user: User = new User(0, '', '', '', '');
+  mail = faEnvelope;
+  constructor(private userService: UserService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-  }
+    const id = this.route.snapshot.params['id'];
 
+    this.userService.getUserById(id)
+      .subscribe(
+        (response: UserApiResponse<User>) => {
+          this.user = response.data;
+        }
+      );
+  }
+  onBack() {
+    this.router.navigate(['/home']);
+  }
 }

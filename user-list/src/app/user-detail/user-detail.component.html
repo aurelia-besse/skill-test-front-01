@@ -1,1 +1,25 @@
-<p>user-detail works!</p>
+<div class="user-container">
+  <div class="user-back">
+    <button (click)="onBack()">Retour</button>
+  </div>
+  <div class="user-card-container">
+    <div class="user-card">
+      <div class="user-card-header"></div>
+      <div class="avatar-section">
+        <img src="{{ user.avatar}}" class="user-avatar">
+      </div>
+      <div class="user-detail">
+        <h2>{{ user.first_name }} {{ user.last_name}}</h2>
+        <div>
+          <fa-icon [icon]="mail"></fa-icon>
+          <a href="mailto: {{ user.email }}" >{{ user.email }}</a>
+        </div>
+      </div>
+      <div class="user-card-footer"></div>
+    </div>
+  </div>
+
+</div>
+
+
+
