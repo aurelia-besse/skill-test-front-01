@@ -1,1 +1,5 @@
-<p>user works!</p>
+<li class="user">
+  <div><img src="{{ userAvater }}" class="avatar"></div>
+  <div class="user-name"><h4>{{ firstName }} {{ lastName }}</h4></div>
+  <div><fa-icon [icon]="info" class="icon-info" (click)="onViewUser(userId)"></fa-icon><p class="detail" (click)="onViewUser(userId)">detail</p></div>
+</li>
