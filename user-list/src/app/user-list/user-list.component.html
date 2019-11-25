@@ -1,1 +1,15 @@
-<p>user-list works!</p>
+<div class="list-user-container">
+  <h2>User List</h2>
+  <ul class="list-user">
+    <app-user *ngFor="let user of users | paginate: { id: 'home', itemsPerPage: perPage, currentPage: p, totalItems: total}"
+              [userId]="user.id"
+              [lastName]="user.last_name"
+              [firstName]="user.first_name"
+              [userAvater]="user.avatar"></app-user>
+  </ul>
+  <div>
+    <pagination-controls class="my-pagination" (pageChange)="getPage($event)" id="home"></pagination-controls>
+  </div>
+</div>
+
+
