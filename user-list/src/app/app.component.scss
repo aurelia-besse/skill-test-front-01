@@ -1,0 +1,37 @@
+.navigation-bar {
+  position: relative;
+  display: flex;
+  color: aliceblue;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  height: 60px;
+  background-color: black;
+}
+.navigation-row {
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.5rem 2rem;
+  @media screen and (min-width: 1441px){
+    padding: 0.5rem 5rem;
+  }
+}
+.navigation-actions {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navigation-link {
+  display: block;
+  padding: 0.5rem 0.5rem;
+  text-decoration: none;
+  color: inherit;
+}
+.ngx-pagination{
+  margin:0;
+}

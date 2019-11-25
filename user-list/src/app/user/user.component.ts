@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import {faInfoCircle} from '@fortawesome/free-solid-svg-icons';
+import {faInfoCircle} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-user',
